@@ -30,7 +30,7 @@ with st.echo(code_location='below'):
         angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
         #angle = np.linspace(0, 2*np.pi, 1000) / points_per_turn
         #radius = curr_point_num / total_points
-        radius = (5 - 5 * np.sin(angle)) * curr_point_num / total_points
+        radius = (5 - 5 * math.sin(angle)) * curr_point_num / total_points
         x = radius * math.cos(angle)
         y = radius * math.sin(angle)
         data.append(Point(x, y))
