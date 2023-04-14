@@ -28,10 +28,14 @@ with st.echo(code_location='below'):
     for curr_point_num in range(total_points):
         curr_turn, i = divmod(curr_point_num, points_per_turn)
         angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
-        radius = curr_point_num / total_points
+        #angle = np.linspace(0, 2*np.pi, 1000) / points_per_turn
+        #radius = curr_point_num / total_points
+        radius = (5 - 5 * np.sin(angle)) * curr_point_num / total_points
         x = radius * math.cos(angle)
         y = radius * math.sin(angle)
         data.append(Point(x, y))
+        
+    
 
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
