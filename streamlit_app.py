@@ -68,7 +68,7 @@ with st.echo(code_location='below'):
         #radius = curr_point_num / total_points
         radius2 = curr_point_num2 / total_points2
         x = radius2 * math.cos(angle2) ** 3
-        y = radius2 * math.sin(angle2) * math.sin(angle2) * math.sin(angle2)
+        y = radius2 * math.sin(angle2) ** 3
         data.append(Point(x, y))
         
     
