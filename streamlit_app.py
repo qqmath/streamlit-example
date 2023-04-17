@@ -44,14 +44,18 @@ with st.echo(code_location='below'):
     
     
     
-    ## Cardioid spiral
-
-Cardioid spiral is now on Streamlit to your heart's desire :heart:
+   
 
 
 
 """
 
+ ## Cardioid spiral
+
+Cardioid spiral is now on Streamlit to your heart's desire :heart:
+
+
+"""
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
@@ -85,5 +89,7 @@ with st.echo(code_location='below'):
     
     
     
-    If you have any questions, checkout the Streamlit [documentation](https://docs.streamlit.io) and [community
+    ## If you have any questions, checkout the Streamlit [documentation](https://docs.streamlit.io) and [community
 forums](https://discuss.streamlit.io).
+    
+"""
