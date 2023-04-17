@@ -83,13 +83,5 @@ with st.echo(code_location='below'):
         .encode(x='x:Q', y='y:Q'))
     
     
-    
-    
-    
-    
-    
-    
-    ## If you have any questions, checkout the Streamlit [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-    
+
 """
