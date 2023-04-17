@@ -88,8 +88,8 @@ Hypotrochoid spiral
 with st.echo(code_location='below'):
     total_points3 = st.slider("Number of points in Hypotrochoid spiral", 1, 10000, 2000, key = 4)
     num_turns3 = st.slider("Number of turns in Hypotrochoid spiral", 1, 100, 11, key = 5)
-    angle32 = st.number_input("Second angle in Hypotrochoid spiral", key = 6)
-    radius32 = st.number_input("Second radius in Hypotrochoid spiral", min_value=0, key = 7)
+    angle32 = st.number_input("Second angle in Hypotrochoid spiral", value=0, key = 6)
+    radius32 = st.number_input("Second radius in Hypotrochoid spiral", value=2, min_value=0, key = 7)
     Point = namedtuple('Point', 'x y')
     data = []
 
