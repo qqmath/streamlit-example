@@ -98,7 +98,7 @@ with st.echo(code_location='below'):
     for curr_point_num3 in range(total_points3):
         curr_turn3, i = divmod(curr_point_num3, points_per_turn3)
         angle31 = (curr_turn3 + 1) * 2 * math.pi * i / points_per_turn3
-        radius3 = curr_point_num3 / total_points3
+        radius31 = curr_point_num3 / total_points3
         x = radius31 * math.cos(angle31) + radius32 * math.cos(angle32)
         y = radius31 * math.sin(angle31) + radius32 * math.sin(angle32)
         data.append(Point(x, y))
