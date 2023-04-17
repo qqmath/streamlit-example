@@ -78,16 +78,18 @@ with st.echo(code_location='below'):
  
 """
 
-**Catenary spiral**
+**Hypotrochoid spiral**
 
-Catenary spiral (hanging rope)
+Hypotrochoid spiral 
 
 
 """
 
 with st.echo(code_location='below'):
-    total_points3 = st.slider("Number of points in Catenary spiral", 1, 10000, 2000, key = 4)
-    num_turns3 = st.slider("Number of turns in Catenary spiral", 1, 100, 11, key = 5)
+    total_points3 = st.slider("Number of points in Hypotrochoid spiral", 1, 10000, 2000, key = 4)
+    num_turns3 = st.slider("Number of turns in Hypotrochoid spiral", 1, 100, 11, key = 5)
+    angle32 = st.number_input("Second angle in Hypotrochoid spiral", key = 6)
+    radius32 = st.number_input("Second radius in Hypotrochoid spiral", min_value=0, key = 7)
     Point = namedtuple('Point', 'x y')
     data = []
 
@@ -95,10 +97,10 @@ with st.echo(code_location='below'):
 
     for curr_point_num3 in range(total_points3):
         curr_turn3, i = divmod(curr_point_num3, points_per_turn3)
-        angle3 = (curr_turn3 + 1) * 2 * math.pi * i / points_per_turn3
+        angle31 = (curr_turn3 + 1) * 2 * math.pi * i / points_per_turn3
         radius3 = curr_point_num3 / total_points3
-        x = radius3 
-        y = math.cosh(angle3)
+        x = radius31 * math.cos(angle31) + radius32 * math.cos(angle32)
+        y = radius31 * math.sin(angle31) + radius32 * math.sin(angle32)
         data.append(Point(x, y))
         
     
