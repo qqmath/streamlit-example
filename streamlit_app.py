@@ -69,15 +69,15 @@ with st.echo(code_location='below'):
         #angle = np.linspace(0, 2*np.pi, 1000) / points_per_turn
         #radius = curr_point_num / total_points
         radius2 = (5 - 5 * math.sin(angle2)) * curr_point_num2 / total_points2
-        x = radius2 * math.cos(angle2) * math.cos(angle2) * math.cos(angle2)
-        y = radius2 * math.sin(angle2) * math.sin(angle2) * math.sin(angle2)
-        data.append(Point(x, y))
+        x2 = radius2 * math.cos(angle2) * math.cos(angle2) * math.cos(angle2)
+        y2 = radius2 * math.sin(angle2) * math.sin(angle2) * math.sin(angle2)
+        data.append(Point(x2, y2))
         
     
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500, key = 4)
+    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
-        .encode(x='x:Q', y='y:Q'))
+        .encode(x2='x2:Q', y2='y2:Q'))
     
     
 
