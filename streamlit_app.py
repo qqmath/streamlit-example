@@ -17,8 +17,8 @@ Cardioid spiral is now on Streamlit to your heart's desire :heart:
 
 
 with st.echo(code_location='below'):
-    total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
+    total_points = st.slider("Number of points in spiral", 1, 5000, 2000, key = count)
+    num_turns = st.slider("Number of turns in spiral", 1, 100, 9, key = count)
 
     Point = namedtuple('Point', 'x y')
     data = []
@@ -26,7 +26,7 @@ with st.echo(code_location='below'):
     points_per_turn = total_points / num_turns
 
     for curr_point_num in range(total_points):
-        curr_turn, i = divmod(curr_point_num, points_per_turn)
+        curr_turn, i = divmod(curr_point_num, points_per_turn, key = count)
         angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
         #angle = np.linspace(0, 2*np.pi, 1000) / points_per_turn
         #radius = curr_point_num / total_points
@@ -37,13 +37,13 @@ with st.echo(code_location='below'):
         
     
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
+    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500, key = count)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
     
     
     
-    
+    count += 1
    
 
 
