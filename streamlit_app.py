@@ -58,8 +58,8 @@ Astroid spiral is now on Streamlit to your heart's desire :star:
 """
 
 with st.echo(code_location='below'):
-    total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9)
+    total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000, key = 2)
+    num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9, key = 2)
 
     Point2 = namedtuple('Point', 'x y')
     data = []
@@ -72,15 +72,15 @@ with st.echo(code_location='below'):
         #angle = np.linspace(0, 2*np.pi, 1000) / points_per_turn
         #radius = curr_point_num / total_points
         radius2 = (5 - 5 * math.sin(angle2)) * curr_point_num2 / total_points2
-        x = radius2 * math.cos(angle2)
-        y = radius2 * math.sin(angle2)
+        x2 = radius2 * math.cos(angle2) * math.cos(angle2) * math.cos(angle2)
+        y2 = radius2 * math.sin(angle2) * math.sin(angle2) * math.sin(angle2)
         data.append(Point(x, y))
         
     
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
+    st.altair_chart2(alt.Chart(pd.DataFrame(data), height=500, width=500, key = 2)
         .mark_circle(color='#0068c9', opacity=0.5)
-        .encode(x='x:Q', y='y:Q'))
+        .encode(x2='x2:Q', y2='y2:Q'))
     
     
 
