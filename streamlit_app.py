@@ -80,7 +80,7 @@ with st.echo(code_location='below'):
 
 **Catenary spiral**
 
-Catenary spiral (hanging rope) :bridge:
+Catenary spiral (hanging rope)
 
 
 """
@@ -98,7 +98,7 @@ with st.echo(code_location='below'):
         angle3 = (curr_turn3 + 1) * 2 * math.pi * i / points_per_turn3
         radius3 = curr_point_num3 / total_points3
         x = radius3 
-        y = radius3 * math.cosh(angle3)
+        y = math.cosh(angle3)
         data.append(Point(x, y))
         
     
