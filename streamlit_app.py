@@ -56,9 +56,9 @@ Astroid spiral is now on Streamlit to your heart's desire :star:
 """
 
 with st.echo(code_location='below'):
-    total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9)
-
+    total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000, key = count)
+    num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9, key = count)
+count += 1
     Point2 = namedtuple('Point', 'x y')
     data = []
 
