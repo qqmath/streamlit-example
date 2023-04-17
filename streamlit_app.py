@@ -63,7 +63,7 @@ with st.echo(code_location='below'):
 
     points_per_turn2 = total_points2 / num_turns2
 
-    for curr_point_num in range(total_points2):
+    for curr_point_num2 in range(total_points2):
         curr_turn2, i = divmod(curr_point_num2, points_per_turn2)
         angle2 = (curr_turn2 + 1) * 2 * math.pi * i / points_per_turn2
         #angle = np.linspace(0, 2*np.pi, 1000) / points_per_turn
