@@ -17,8 +17,8 @@ Cardioid spiral is now on Streamlit to your heart's desire :heart:
 
 
 with st.echo(code_location='below'):
-    total_points = st.slider("Number of points in spiral", 1, 5000, 2000, key = count)
-    num_turns = st.slider("Number of turns in spiral", 1, 100, 9, key = count)
+    total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
+    num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
 
     Point = namedtuple('Point', 'x y')
     data = []
@@ -26,7 +26,7 @@ with st.echo(code_location='below'):
     points_per_turn = total_points / num_turns
 
     for curr_point_num in range(total_points):
-        curr_turn, i = divmod(curr_point_num, points_per_turn, key = count)
+        curr_turn, i = divmod(curr_point_num, points_per_turn)
         angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
         #angle = np.linspace(0, 2*np.pi, 1000) / points_per_turn
         #radius = curr_point_num / total_points
@@ -37,13 +37,11 @@ with st.echo(code_location='below'):
         
     
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500, key = count)
+    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
     
     
-    
-    count += 1
    
 
 
@@ -58,8 +56,8 @@ Astroid spiral is now on Streamlit to your heart's desire :star:
 """
 
 with st.echo(code_location='below'):
-    total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000, key = 2)
-    num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9, key = 2)
+    total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000)
+    num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9)
 
     Point2 = namedtuple('Point', 'x y')
     data = []
@@ -74,11 +72,11 @@ with st.echo(code_location='below'):
         radius2 = (5 - 5 * math.sin(angle2)) * curr_point_num2 / total_points2
         x2 = radius2 * math.cos(angle2) * math.cos(angle2) * math.cos(angle2)
         y2 = radius2 * math.sin(angle2) * math.sin(angle2) * math.sin(angle2)
-        data.append(Point(x, y))
+        data.append(Point(x2, y2))
         
     
 
-    st.altair_chart2(alt.Chart(pd.DataFrame(data), height=500, width=500, key = 2)
+    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500, key = 2)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x2='x2:Q', y2='y2:Q'))
     
