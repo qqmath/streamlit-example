@@ -7,7 +7,7 @@ import streamlit as st
 """
 This article shows different types of spirals in an interactive way. 
 
-## Cardioid spiral
+Cardioid spiral
 
 Cardioid spiral is now on Streamlit to your heart's desire :heart:
 
@@ -50,7 +50,7 @@ with st.echo(code_location='below'):
 
 """
 
- ## Cardioid spiral
+ Cardioid spiral
 
 Cardioid spiral is now on Streamlit to your heart's desire :heart:
 
@@ -84,4 +84,3 @@ with st.echo(code_location='below'):
     
     
 
-"""
