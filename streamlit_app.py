@@ -50,7 +50,7 @@ with st.echo(code_location='below'):
 
  Astroid spiral
 
-Astroid spiral is now on Streamlit to your heart's desire :star:
+Astroid spiral is shining like a star :star:
 
 
 """
@@ -61,7 +61,6 @@ with st.echo(code_location='below'):
     count += 1
     Point = namedtuple('Point', 'x y')
     data = []
-    count += 1
 
     points_per_turn2 = total_points2 / num_turns2
 
