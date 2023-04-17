@@ -88,8 +88,8 @@ Trochoid spiral
 with st.echo(code_location='below'):
     total_points3 = st.slider("Number of points in Trochoid spiral", 1, 10000, 2000, key = 4)
     num_turns3 = st.slider("Number of turns in Trochoid spiral", 1, 100, 11, key = 5)
-    angle321 = st.number_input("Second angle in Trochoid spiral", value=0.00, step=0.01, key = 6)
-    radius32 = st.number_input("Second radius in Trochoid spiral", value=1, min_value=0, key = 7)
+    angle321 = st.number_input("Second angle multiplier in Trochoid spiral", value=0.00, step=0.01, key = 6)
+    radius321 = st.number_input("Second radius multiplier in Trochoid spiral", value=0.00, , step=0.01, key = 7)
     Point = namedtuple('Point', 'x y')
     data = []
 
@@ -100,6 +100,7 @@ with st.echo(code_location='below'):
         angle31 = (curr_turn3 + 1) * 2 * math.pi * i / points_per_turn3
         angle32 = angle321 * angle31
         radius31 = curr_point_num3 / total_points3
+        radius32 = radius321 * radius31
         x = radius31 * math.cos(angle31) + radius32 * math.cos(angle32)
         y = radius31 * math.sin(angle31) + radius32 * math.sin(angle32)
         data.append(Point(x, y))
