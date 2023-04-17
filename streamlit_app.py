@@ -46,7 +46,7 @@ with st.echo(code_location='below'):
 
 """
 
-** Astroid spiral **
+**Astroid spiral**
 
 Astroid spiral is shining like a star :star:
 
