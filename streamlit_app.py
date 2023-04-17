@@ -58,7 +58,6 @@ Astroid spiral is shining like a star :star:
 with st.echo(code_location='below'):
     total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000, key = 2)
     num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9, key = 3)
-    count += 1
     Point = namedtuple('Point', 'x y')
     data = []
 
