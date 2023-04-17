@@ -58,7 +58,9 @@ Astroid spiral is now on Streamlit to your heart's desire :star:
 with st.echo(code_location='below'):
     count = 2
     total_points2 = st.slider("Number of points in spiral", 1, 5000, 2000, key = count)
+    count += 1
     num_turns2 = st.slider("Number of turns in spiral", 1, 100, 9, key = count)
+    count += 1
     Point = namedtuple('Point', 'x y')
     data = []
     count += 1
@@ -77,7 +79,8 @@ with st.echo(code_location='below'):
         
     
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500, key = 2)
+    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500, key = count)
+                    count += 1
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x2='x2:Q', y2='y2:Q'))
     
